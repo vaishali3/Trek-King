@@ -1,0 +1,14 @@
+<% include partials/header %>
+<div class="container">
+  <h3>This is Description page</h3>
+  <h1><%= trek.name %></h1>
+  <img src="<%= trek.image %>" alt="trek image">
+  <br><br>
+  <p><%= trek.description %></p>
+  <a class="btn btn-large btn-primary" href="/treks/<%=trek._id %>/comments/new">Add a Review</a>
+  <% trek.comments.forEach(function(data){ %>
+    <p>
+    <strong><%=data.author %></strong> - <%= data.text %>
+    </p>
+  <% }) %></div>
+<% include partials/footer %>

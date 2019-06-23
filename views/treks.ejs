@@ -1,0 +1,27 @@
+<% include partials/header %>
+<!-- <h4><%=currentUser%></h4> -->
+<div class="container">
+  <header class="jumbotron">
+        <div class="container">
+           <h1>Trekking Sites</h1>
+           <p>These are Hnad-picked Trekking Sites from all Over the World</p>
+           <div><a class="btn btn-primary btn-large" href="/treks/new">Add New Trekking Site</a></div>
+        </div>
+  </header>
+  <div class="row text-center" style="display:flex; flex-wrap:wrap;">
+    <% treks.forEach(function(trek){ %>
+      <div class="col-md-3 col-sm-6 ">
+          <div class="thumbnail">
+            <img src="<%= trek.image %>">
+          <div class="caption">
+            <h4><%= trek.name %></h4>
+          </div>
+          <div>
+            <a href="/treks/<%= trek._id %>" class="btn btn-primary btn-large">More Info</a>
+          </div>
+          </div>
+     </div>
+    <%}); %>
+  </div>
+</div>
+<% include partials/footer %>
